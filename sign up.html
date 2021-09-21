@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Domine&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/cc4a981039.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style-link.css" />
+    <title>Sorry</title>
+    <title>Sign up</title>
+
+    <style>
+      .sign-container {
+        margin: 3rem 0;
+        background-color: rgb(236, 236, 236);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .sign-container > h1,
+      h3 {
+        margin: 1rem;
+        color: #1f2837;
+      }
+      .form {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .form > input,
+      select {
+        width: 60%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+        margin: 1rem 0;
+        padding: 0.7rem 1.2rem;
+      }
+      .sign-up {
+        border: 2px solid transparent;
+        background-color: #1f2837;
+        color: #cea434;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 0.2rem 0.8rem;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: all 0.3s;
+      }
+      .sign-up:hover {
+        color: #1f2837;
+        background-color: #cea434;
+      }
+      .btn-l {
+        border: 2px solid transparent;
+        background-color: #cea434;
+        color: #1f2837;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 0.2rem 0.8rem;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: all 0.3s;
+      }
+      .btn-l:hover {
+        color: #cea434;
+        background-color: #1f2837;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <i class="fas fa-book-reader"></i>
+        <h2 class="logo_name">Universty of Hyderabad</h2>
+        <h4>Change your life, start here.</h4>
+      </div>
+      <div class="nav_items">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about university.html">About University</a></li>
+          <li><a href="programs.html">Departments</a></li>
+          <li><a href="admission.html">Admissions</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- sign up page_________________ -->
+    <div class="sign-container">
+      <h1>Sign up as Student or Teacher</h1>
+      <div class="form">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter your Full Name"
+        />
+        <input
+          type="text"
+          name="email"
+          id="email"
+          placeholder="Enter your Email"
+        />
+        <input
+          type="text"
+          name="password"
+          id="pass"
+          placeholder="Enter Password"
+        />
+        <select name="select" id="select">
+          <option value="">Select</option>
+          <option value="teacher">Teacher</option>
+          <option value="student">Student</option>
+        </select>
+      </div>
+      <button class="sign-up" onclick="sigup()">Sign Up</button>
+      <h3>Already signed Up?</h3>
+      <a href="login.html"><button class="btn-l">Log In</button></a>
+    </div>
+    <footer>
+      <div class="footer_div">
+        <h5 class="footer_heading">About University</h5>
+        <a href="#">Brief Introduction</a>
+        <a href="#">The legal authority</a>
+        <a href="#">Message from VC</a>
+        <a href="#">Board of governers</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="footer_div">
+        <h5 class="footer_heading">Admissions</h5>
+        <a href="#">Study at Isra</a>
+        <a href="#">Undergraduate</a>
+        <a href="#">Postgraduate</a>
+        <a href="#">University Campus</a>
+        <a href="#">Interview proforma</a>
+        <a href="#">Fee structure</a>
+      </div>
+      <div class="footer_div">
+        <h5 class="footer_heading">Our Campuses</h5>
+        <a href="#">Hyderbad Campus</a>
+        <a href="#">Karachi Campus</a>
+        <a href="#">Islamabad Campus</a>
+      </div>
+      <div class="footer_div">
+        <h5 class="footer_heading">Quick Links</h5>
+        <a href="#">News letter</a>
+        <a href="#">Scholarships</a>
+        <a href="#">Alumni</a>
+        <a href="#">Microsoft DreamSpark</a>
+      </div>
+      <div class="footer_div">
+        <h5 class="footer_heading">Campus Life</h5>
+        <a href="#">Life on campus</a>
+        <a href="#">Academic Calendar</a>
+        <a href="#">Course Registration</a>
+        <a href="#">UOH Webmail</a>
+        <a href="#">LMS</a>
+      </div>
+    </footer>
+    <div class="myname">
+      <h3>
+        Designed and Developed By Muhammad Talha (WM-1097) (All rights are
+        reserved)
+      </h3>
+    </div>
+
+    <!-- link firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyB_2t-PS4MP-VgYOv8X0lg02c1jb4QZHqg",
+        authDomain: "smit-admin-panel.firebaseapp.com",
+        databaseURL: "https://smit-admin-panel-default-rtdb.firebaseio.com",
+        projectId: "smit-admin-panel",
+        storageBucket: "smit-admin-panel.appspot.com",
+        messagingSenderId: "217214280444",
+        appId: "1:217214280444:web:2459ca0805f33c333bad79",
+      };
+      firebase.initializeApp(firebaseConfig);
+      console.log(firebase);
+    </script>
+    <script src="signup.js"></script>
+  </body>
+</html>

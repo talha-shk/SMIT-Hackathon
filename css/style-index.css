@@ -1,0 +1,451 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Mukta', sans-serif;
+}
+
+
+/* header styling */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1f2837;
+}
+
+
+/* logo styling */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7px;
+}
+
+.logo i {
+    font-size: 1.5rem;
+    color: #cea434;
+}
+
+.logo_name {
+    color: white;
+    font-size: 1.3rem;
+    line-height: 32px;
+}
+
+.logo h4 {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: lighter;
+    line-height: 7px;
+}
+
+
+/* navbar styling */
+
+.nav_items ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav_items ul li {
+    transition: all 0.5s;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+
+.nav_items ul li:hover {
+    border: 1px solid #cea434;
+}
+
+.nav_items ul li a {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 15px;
+    margin: 5px;
+    align-self: center;
+}
+
+
+/* main section styling */
+
+.main_section {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 90vh;
+    background-image: url(../images/campus.jpg);
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    animation: bg_animate;
+    animation-timing-function: ease-in-out;
+    animation-duration: 60s;
+    animation-delay: 5s;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bg_animate {
+    0% {
+        background-image: url(../images/campus.jpg);
+    }
+    20% {
+        background-image: url(../images/electrical.jpg);
+    }
+    40% {
+        background-image: url(../images/civil.jpg);
+    }
+    60% {
+        background-image: url(../images/computer.jpg);
+    }
+    80% {
+        background-image: url(../images/sports.jpg);
+    }
+    100% {
+        background-image: url(../images/exam.jpg);
+    }
+}
+
+.main_section::after {
+    content: '';
+    width: 100%;
+    height: 90%;
+    background-image: linear-gradient(to left, #cea434, #1f2837);
+    position: absolute;
+    top: 4.9rem;
+    left: 0;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+
+/* main text styling */
+
+.main_vertical_div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    height: 100%;
+    z-index: 2;
+}
+
+.main_vertical_div h2,
+p {
+    color: white;
+}
+
+.campus_text {
+    width: 65%;
+    margin-top: 2.5em;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 20px;
+    padding: 15px;
+    border-right: 10px solid #cea434;
+}
+
+.campus_text h2 {
+    font-size: 1.8rem;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.campus_text p {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.campus_lower {
+    width: 90%;
+    margin-left: 20px;
+    background-color: honeydew;
+}
+
+.campus_lower h2 {
+    background-color: #1f2837;
+    color: white;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: inline-block;
+    padding: 10px 0px;
+    font-size: 1rem;
+    margin-top: -65px;
+    margin-left: 5px;
+    margin-right: 2px;
+}
+
+.campus_lower_p {
+    display: inline-block;
+    width: 93%;
+    padding: 5px 0px;
+}
+
+.campus_lower a {
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.campus_lower a:hover {
+    color: navy;
+}
+
+.quick_links {
+    width: 25%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    background-color: rgba(31, 40, 55, 0.8);
+    z-index: 2;
+}
+
+.quick_links h4 {
+    color: rgb(31, 40, 55);
+    background-color: #cea434;
+    border-radius: 5px;
+    padding: 4px 55px;
+    margin: 3px;
+    margin-bottom: 30px;
+}
+
+.quick_links a {
+    color: white;
+    margin: 10px 4px;
+    border: 1px solid transparent;
+    transition: all 1s;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.quick_links a:hover {
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.quick_links hr {
+    color: white;
+    width: 100%;
+    opacity: 0.3;
+}
+
+
+/* event section styling */
+
+.event_section {
+    position: relative;
+    background-color: rgb(238, 238, 238);
+    padding-top: 5px;
+}
+
+.event_cards_holder {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.event_cards {
+    width: 23%;
+    height: auto;
+    padding: 5px;
+    background-color: rgb(231, 230, 230);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.event_img {
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3 ease-in-out;
+}
+
+.card_para {
+    color: black;
+    line-height: 15px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.event_cards h4 {
+    font-size: 1.2rem;
+    margin-left: 5px;
+    /* font-weight: bold; */
+    line-height: 1.5rem;
+}
+
+.event_cards a {
+    align-self: flex-end;
+    float: right;
+    font-weight: bold;
+    color: black;
+}
+
+.event_cards a:hover {
+    color: #fa7252;
+}
+
+.h2_header_events {
+    font-weight: bolder;
+    margin-left: 0.7em;
+    color: rgb(22, 22, 22);
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 4em;
+}
+
+.about_info {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about_img {
+    width: 28.5%;
+}
+
+.about_text {
+    width: 70%;
+}
+
+.about_para {
+    color: black;
+    padding: 10px 0px;
+}
+
+.about_text_link {
+    color: black;
+    float: right;
+    font-weight: bold;
+}
+
+.about_text_link:hover {
+    color: #fa7252;
+}
+
+.h2_header_about {
+    margin-left: 2.7em;
+}
+
+.about_links {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.about_links a {
+    text-align: center;
+    font-weight: bolder;
+    background-color: rgb(255, 255, 255);
+    width: 32%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    letter-spacing: 3px;
+    border-radius: 5px;
+}
+
+.about_links a:hover {
+    background-color: rgb(236, 236, 236);
+}
+
+
+/* covid affairs styling */
+
+.covid {
+    width: 100%;
+    margin-top: 3em;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.covid_item1 {
+    width: 65%;
+    text-align: center;
+    padding: 20px 0px;
+    background-color: #1f2837;
+}
+
+.covid_item1 h3 {
+    color: white;
+}
+
+.covid_item2 {
+    text-align: center;
+    background: #cea434;
+    padding: 20px 0px;
+    width: 25%;
+}
+
+.covid_item2 a {
+    padding: 5px 15px;
+    border-radius: 7px;
+    background-color: #1f2837;
+    color: white;
+}
+
+
+/* footer styling */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(230, 230, 230);
+    margin-top: 2em;
+    padding-top: 20px;
+}
+
+.footer_div {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer_div h5 {
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+.footer_div a {
+    font-size: 0.9rem;
+    padding: 5px;
+    color: black;
+    transition: all .5s;
+}
+
+.footer_div a:hover {
+    color: #fa7252;
+}
+
+.myname {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.myname h3 {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-align: center;
+}

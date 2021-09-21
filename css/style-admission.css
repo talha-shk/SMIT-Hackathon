@@ -1,0 +1,255 @@
+/* header styling */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Mukta', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1f2837;
+}
+
+
+/* logo styling */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7px;
+}
+
+.logo i {
+    font-size: 1.5rem;
+    color: #cea434;
+}
+
+.logo_name {
+    color: white;
+    font-size: 1.3rem;
+    line-height: 32px;
+}
+
+.logo h4 {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: lighter;
+    line-height: 7px;
+}
+
+
+/* navbar styling */
+
+.nav_items ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav_items ul li {
+    transition: all 0.5s;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+
+.nav_items ul li:hover {
+    border: 1px solid #cea434;
+}
+
+.nav_items ul li a {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 15px;
+    margin: 5px;
+    align-self: center;
+}
+
+
+/* section styling */
+
+.admission {
+    width: 100%;
+    display: flex;
+}
+
+.adm_policy {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+}
+
+.adm_policy h1 {
+    font-family: 'Train One', cursive;
+    font-size: 1.9rem;
+    margin-left: 0.3em;
+}
+
+.adm_policy ul li {
+    list-style: disc outside none;
+    display: list-item;
+    margin-left: 2em;
+    margin-top: 1em;
+}
+
+.btn {
+    border: 3px solid transparent;
+    color: #ffd04e;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #1f2837;
+    border-radius: 8px;
+    width: 40%;
+    margin: 0px auto;
+    margin-top: 1em;
+    text-align: center;
+    padding: 6px 10px;
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    border: 3px solid #ffd04e;
+}
+
+.adm_form {
+    background-color: #1f2837;
+    border-top: 4px groove #ffd04e;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+}
+
+.adm_form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.adm_form h2 {
+    font-family: 'Caveat', cursive;
+    color: white;
+    text-align: center;
+    font: 3rem;
+    letter-spacing: 2px;
+}
+
+.fom_divs {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+}
+
+.fom_divs input {
+    width: 80%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #ffd04e;
+}
+
+.fom_divs label {
+    color: white;
+    width: 18%;
+    padding: 5px;
+    display: inline-block;
+}
+
+.form_name label {
+    width: 40%;
+    padding-bottom: 0px;
+}
+
+.form_name input {
+    padding: 5px;
+}
+
+.form_gender:nth-child(1) {
+    width: 42%;
+}
+
+.form_gender_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40%;
+}
+
+.adm_form a {
+    color: #1f2837;
+    border: 2px solid transparent;
+    background-image: linear-gradient(to right, #e6a901, #ffd04e);
+    border-radius: 40px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    transition: all 1s;
+}
+
+.adm_form a:hover {
+    border-color: #ffd04e;
+    background-image: none;
+    color: white;
+}
+
+
+/* footer styling */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(230, 230, 230);
+    margin-top: 2em;
+    padding-top: 20px;
+}
+
+.footer_div {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer_div h5 {
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+.footer_div a {
+    font-size: 0.9rem;
+    padding: 5px;
+    color: black;
+    transition: all .5s;
+}
+
+.footer_div a:hover {
+    color: #fa7252;
+}
+
+.myname {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.myname h3 {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-align: center;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Domine&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/cc4a981039.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style-link.css" />
+    <title>Student Portal</title>
+    <style>
+      .container {
+        margin: 2rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #course {
+        width: 100%;
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      #info {
+        background-color: rgb(233, 233, 233);
+        width: 30%;
+        margin: 1rem;
+        padding: 1rem;
+      }
+      #info > h1 {
+        color: #cea434;
+      }
+      #info > h3 {
+        color: #1f2837;
+      }
+      .h2 {
+        margin: 1rem 0;
+        text-align: center;
+        color: #1f2837;
+      }
+      .btn {
+        margin: 1rem 0;
+        border: 2px solid transparent;
+        background-color: #cea434;
+        color: #1f2837;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 0.2rem 0.8rem;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: all 0.3s;
+      }
+      .btn:hover {
+        color: #cea434;
+        background-color: #1f2837;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <i class="fas fa-book-reader"></i>
+        <h2 class="logo_name">Universty of Hyderabad</h2>
+        <h4>Change your life, start here.</h4>
+      </div>
+      <div class="nav_items">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about university.html">About University</a></li>
+          <li><a href="programs.html">Departments</a></li>
+          <li><a href="admission.html">Admissions</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1>Welcome to Student Portal</h1>
+      <h2 class="h2">You can browse available courses</h2>
+      <div id="course">
+        <button class="btn" id="btn" onclick="show_course()">
+          Show All Courses
+        </button>
+      </div>
+    </div>
+    <h4 class="h2">Course selection functionlity will be implemented soon</h4>
+
+    <footer>
+      <div class="footer_div">
+        <h5 class="footer_heading">About University</h5>
+        <a href="#">Brief Introduction</a>
+        <a href="#">The legal authority</a>
+        <a href="#">Message from VC</a>
+        <a href="#">Board of governers</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="footer_div">
+        <h5 class="footer_heading">Admissions</h5>
+        <a href="#">Study at Isra</a>
+        <a href="#">Undergraduate</a>
+        <a href="#">Postgraduate</a>
+        <a href="#">University Campus</a>
+        <a href="#">Interview proforma</a>
+        <a href="#">Fee structure</a>
+      </div>
+      <div class="footer_div">
+        <h5 class="footer_heading">Our Campuses</h5>
+        <a href="#">Hyderbad Campus</a>
+        <a href="#">Karachi Campus</a>
+        <a href="#">Islamabad Campus</a>
+      </div>
+      <div class="footer_div">
+        <h5 class="footer_heading">Quick Links</h5>
+        <a href="#">News letter</a>
+        <a href="#">Scholarships</a>
+        <a href="#">Alumni</a>
+        <a href="#">Microsoft DreamSpark</a>
+      </div>
+      <div class="footer_div">
+        <h5 class="footer_heading">Campus Life</h5>
+        <a href="#">Life on campus</a>
+        <a href="#">Academic Calendar</a>
+        <a href="#">Course Registration</a>
+        <a href="#">UOH Webmail</a>
+        <a href="#">LMS</a>
+      </div>
+    </footer>
+    <div class="myname">
+      <h3>
+        Designed and Developed By Muhammad Talha (WM-1097) (All rights are
+        reserved)
+      </h3>
+    </div>
+
+    <script>
+      function show_course() {
+        var btn = document.getElementById("btn");
+        var div = document.getElementById("course");
+        var ref = firebase.database().ref("course");
+        ref.on("value", function (snapshot) {
+          console.log(snapshot.val());
+          var data = snapshot.val();
+          var value = Object.values(data);
+          console.log(value);
+          console.log(value);
+          value.map((v, i) => {
+            let div2 = document.createElement("div");
+            div2.setAttribute("id", "info");
+            div.appendChild(div2);
+            console.log(v.title);
+            var list_item = document.createElement("h3");
+            var list_text = document.createTextNode(
+              "Course Name: " + v.course_name
+            );
+            list_item.appendChild(list_text);
+
+            var list_item2 = document.createElement("h3");
+            var list_text2 = document.createTextNode(
+              "Course Title: " + v.title
+            );
+            list_item2.appendChild(list_text2);
+
+            var list_item3 = document.createElement("h3");
+            var list_text3 = document.createTextNode(
+              "Credit Hours: " + v.c_hour
+            );
+            list_item3.appendChild(list_text3);
+
+            var name_head = document.createElement("h1");
+            var n = document.createTextNode("Course " + (i + 1));
+            name_head.appendChild(n);
+            div2.appendChild(name_head);
+            div2.appendChild(list_item);
+            div2.appendChild(list_item2);
+            div2.appendChild(list_item3);
+            btn.remove();
+          });
+        });
+      }
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyB_2t-PS4MP-VgYOv8X0lg02c1jb4QZHqg",
+        authDomain: "smit-admin-panel.firebaseapp.com",
+        databaseURL: "https://smit-admin-panel-default-rtdb.firebaseio.com",
+        projectId: "smit-admin-panel",
+        storageBucket: "smit-admin-panel.appspot.com",
+        messagingSenderId: "217214280444",
+        appId: "1:217214280444:web:2459ca0805f33c333bad79",
+      };
+      firebase.initializeApp(firebaseConfig);
+      console.log(firebase);
+    </script>
+    <script src="signup.js"></script>
+  </body>
+</html>

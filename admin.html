@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Domine&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/cc4a981039.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style-link.css" />
+    <title>Admin Panel</title>
+    <style>
+      .container {
+        margin: 2rem 0;
+      }
+      .heading {
+        font-size: 2.2rem;
+        margin: 1rem 0;
+      }
+      .record {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      h1 {
+        color: #1f2837;
+        text-align: center;
+      }
+      h3 {
+        text-align: center;
+      }
+      .student-recoder {
+        background-color: rgb(238, 238, 238);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+      .teacher-recoder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(238, 238, 238);
+        padding: 2rem;
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(238, 238, 238);
+        padding: 2rem;
+      }
+      .form > input {
+        width: 60%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+        margin: 1rem 0;
+        padding: 0.7rem 1.2rem;
+      }
+      .email {
+        color: #cea434;
+      }
+      .name {
+        color: #1f2837;
+      }
+      .btn {
+        border: 2px solid transparent;
+        background-color: #1f2837;
+        color: #cea434;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 0.4rem 0.6rem;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .btn:hover {
+        background-color: #cea434;
+        color: #1f2837;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <i class="fas fa-book-reader"></i>
+        <h2 class="logo_name">Universty of Hyderabad</h2>
+        <h4>Change your life, start here.</h4>
+      </div>
+      <div class="nav_items">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about university.html">About University</a></li>
+          <li><a href="programs.html">Departments</a></li>
+          <li><a href="admission.html">Admissions</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </header>
+    <section class="container">
+      <h1 class="heading">Welcome to Admin Panel</h1>
+      <div class="record">
+        <div class="student-recoder">
+          <h1>Enrolled Students</h1>
+          <div id="std"></div>
+          <button class="btn" id="btns" onclick="student()">
+            Show Students
+          </button>
+        </div>
+        <br />
+        <div class="teacher-recoder">
+          <h1>Available Teachers</h1>
+          <div id="teacher"></div>
+          <button class="btn" id="btnt" onclick="teacher()">
+            Show Teachers
+          </button>
+        </div>
+        <div class="form">
+          <h1>You can Add Courses from here</h1>
+          <input type="text" id="c-name" placeholder="Enter Course Name" />
+          <input type="text" id="c-title" placeholder="Enter Course title" />
+          <input type="number" id="c-hour" placeholder="Enter Credit Hours" />
+          <button class="btn" onclick="add_course()">Add Course</button>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer_div">
+        <h5 class="footer_heading">About University</h5>
+        <a href="#">Brief Introduction</a>
+        <a href="#">The legal authority</a>
+        <a href="#">Message from VC</a>
+        <a href="#">Board of governers</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="footer_div">
+        <h5 class="footer_heading">Admissions</h5>
+        <a href="#">Study at Isra</a>
+        <a href="#">Undergraduate</a>
+        <a href="#">Postgraduate</a>
+        <a href="#">University Campus</a>
+        <a href="#">Interview proforma</a>
+        <a href="#">Fee structure</a>
+      </div>
+      <div class="footer_div">
+        <h5 class="footer_heading">Our Campuses</h5>
+        <a href="#">Hyderbad Campus</a>
+        <a href="#">Karachi Campus</a>
+        <a href="#">Islamabad Campus</a>
+      </div>
+      <div class="footer_div">
+        <h5 class="footer_heading">Quick Links</h5>
+        <a href="#">News letter</a>
+        <a href="#">Scholarships</a>
+        <a href="#">Alumni</a>
+        <a href="#">Microsoft DreamSpark</a>
+      </div>
+      <div class="footer_div">
+        <h5 class="footer_heading">Campus Life</h5>
+        <a href="#">Life on campus</a>
+        <a href="#">Academic Calendar</a>
+        <a href="#">Course Registration</a>
+        <a href="#">UOH Webmail</a>
+        <a href="#">LMS</a>
+      </div>
+    </footer>
+    <div class="myname">
+      <h3>
+        Designed and Developed By Muhammad Talha (WM-1097) (All rights are
+        reserved)
+      </h3>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyB_2t-PS4MP-VgYOv8X0lg02c1jb4QZHqg",
+        authDomain: "smit-admin-panel.firebaseapp.com",
+        databaseURL: "https://smit-admin-panel-default-rtdb.firebaseio.com",
+        projectId: "smit-admin-panel",
+        storageBucket: "smit-admin-panel.appspot.com",
+        messagingSenderId: "217214280444",
+        appId: "1:217214280444:web:2459ca0805f33c333bad79",
+      };
+      firebase.initializeApp(firebaseConfig);
+      // console.log(firebase);
+    </script>
+    <script>
+      function student() {
+        var btn = document.getElementById("btns");
+        var std = document.getElementById("std");
+        var ref = firebase.database().ref("student");
+        ref.on("value", function (snapshot) {
+          console.log(snapshot.val());
+          var data = snapshot.val();
+          var value = Object.values(data);
+          console.log(value);
+          console.log(value);
+          var std = document.getElementById("std");
+          value.map((v, i) => {
+            console.log(v.email);
+            var list_item = document.createElement("h3");
+            list_item.setAttribute("class", "email");
+            var list_text = document.createTextNode(v.email);
+            list_item.appendChild(list_text);
+
+            var list_item2 = document.createElement("h3");
+            list_item2.setAttribute("class", "name");
+            var list_text2 = document.createTextNode(v.Name);
+            list_item2.appendChild(list_text2);
+
+            var name_head = document.createElement("h1");
+            var n = document.createTextNode("Student " + (i + 1));
+            name_head.appendChild(n);
+            std.appendChild(name_head);
+            std.appendChild(list_item2);
+            std.appendChild(list_item);
+            btn.remove();
+          });
+        });
+      }
+
+      function teacher() {
+        var btn = document.getElementById("btnt");
+        var teach = document.getElementById("teacher");
+        var ref = firebase.database().ref("teacher");
+        ref.on("value", function (snapshot) {
+          console.log(snapshot.val());
+          var data = snapshot.val();
+          var value = Object.values(data);
+          console.log(value);
+          console.log(value);
+          var teach = document.getElementById("teacher");
+          value.map((v, i) => {
+            console.log(v.email);
+            var list_item = document.createElement("h3");
+            list_item.setAttribute("class", "email");
+            var list_text = document.createTextNode(v.email);
+            list_item.appendChild(list_text);
+
+            var list_item2 = document.createElement("h3");
+            list_item2.setAttribute("class", "name");
+            var list_text2 = document.createTextNode(v.Name);
+            list_item2.appendChild(list_text2);
+
+            var name_head = document.createElement("h1");
+            var n = document.createTextNode("Teacher " + (i + 1));
+            name_head.appendChild(n);
+            teach.appendChild(name_head);
+            teach.appendChild(list_item2);
+            teach.appendChild(list_item);
+            btn.remove();
+          });
+        });
+      }
+
+      function add_course() {
+        // var rand = Math.floor(Math.random()*100*100);
+        let course_name = document.getElementById("c-name").value;
+        let title = document.getElementById("c-title").value;
+        let c_hour = document.getElementById("c-hour").value;
+        let obj = {
+          course_name: course_name,
+          title: title,
+          c_hour: c_hour,
+        };
+        console.log(course_name, title, c_hour);
+
+        firebase.database().ref(`course`).push(obj);
+        document.getElementById("c-name").value = "";
+        document.getElementById("c-title").value = "";
+        document.getElementById("c-hour").value = "";
+      }
+    </script>
+  </body>
+</html>
